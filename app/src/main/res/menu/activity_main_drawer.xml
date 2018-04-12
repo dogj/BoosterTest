@@ -2,22 +2,36 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+        <item android:title="Invest Types">
+            <menu>
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/defensive"
+            android:icon="@drawable/defensive_icon"
+            android:title="Defensive" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/conservative"
+            android:icon="@drawable/conservative_icon"
+            android:title="Conservative" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/balanced"
+            android:icon="@drawable/balanced_icon"
+            android:title="Balanced" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/balanced_growth"
+            android:icon="@drawable/growth2_test"
+            android:title="Balanced growth" />
+        <item
+            android:id="@+id/growth"
+            android:icon="@drawable/growth_icon"
+            android:title="growth" />
+
+        <item
+            android:id="@+id/aggressive_growth"
+            android:icon="@drawable/agressive_growth"
+            android:title="Aggressive growth" />
+            </menu>
+        </item>
+
     </group>
 
     <item android:title="Communicate">

@@ -6,13 +6,13 @@
 
 
 
-    <color name="green">#45c01a</color>
+    <color name="green">#76ca58</color>
     <color name="white">#ffffff</color>
     <color name="gray">#cccccc</color>
     <color name="black">#000000</color>
     <color name="titlecolor">#445566</color>
 
-    <color name="titbar_color">#0589ba</color>
+    <color name="titbar_color">#007fc4</color>
     <color name="titbar_color2">#00c3e8</color>
 
     <color name="titbar">#4675FF</color>
