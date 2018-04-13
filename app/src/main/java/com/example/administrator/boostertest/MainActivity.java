@@ -1,5 +1,7 @@
 package com.example.administrator.boostertest;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
+    private ContentFragment contentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        setDefaultFragment();
     }
 
     @Override
@@ -61,5 +65,14 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 //        getMenuInflater().inflate(R.menu.main, menu);
 //        return true;
 //    }
+
+    private void setDefaultFragment()
+    {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        contentFragment = new ContentFragment();
+        transaction.replace(R.id.content, contentFragment);
+        transaction.commit();
+    }
 
 }
