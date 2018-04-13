@@ -1,5 +1,6 @@
 package com.example.administrator.boostertest;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -35,18 +36,20 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         int id = item.getItemId();
 
         if (id == R.id.defensive) {
-            Toast.makeText(MainActivity.this,"haha",Toast.LENGTH_SHORT);
+            startActivity(new Intent(this, Defensive.class));
 
         } else if (id == R.id.conservative) {
-            Toast.makeText(MainActivity.this,"waha",Toast.LENGTH_SHORT);
+            startActivity(new Intent(this, Conservative.class));
         } else if (id == R.id.balanced) {
+            startActivity(new Intent(this, Balanced.class));
 
         } else if (id == R.id.balanced_growth) {
+            startActivity(new Intent(this, BalancedGrowth.class));
 
         } else if (id == R.id.growth) {
-
+            startActivity(new Intent(this, Growth.class));
         } else if (id == R.id.aggressive_growth) {
-
+            startActivity(new Intent(this, AggressiveGrowth.class));
         }
 
 

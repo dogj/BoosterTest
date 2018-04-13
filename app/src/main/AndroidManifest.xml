@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Defensive" />
+        <activity android:name=".Conservative" />
+        <activity android:name=".Balanced" />
+        <activity android:name=".BalancedGrowth" />
+        <activity android:name=".Growth" />
+        <activity android:name=".AggressiveGrowth"></activity>
     </application>
 
 </manifest>
