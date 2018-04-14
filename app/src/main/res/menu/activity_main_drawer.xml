@@ -37,11 +37,11 @@
     <item android:title="Questionaire">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/questionaire"
                 android:icon="@drawable/questionnaire"
                 android:title="Questionnarie" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/submit"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Submit" />
         </menu>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.boostertest.AggressiveGrowth"
+    tools:context="com.example.administrator.boostertest.fundTypes.AggressiveGrowth"
     tools:layout_editor_absoluteY="25dp">
     <ScrollView
         android:id="@+id/scrollView"
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Growth Fund"
+        android:text="Agressive Growth Fund"
         android:textColor="@color/blue"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/back_arrow"

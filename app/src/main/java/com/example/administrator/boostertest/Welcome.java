@@ -18,6 +18,7 @@ public class Welcome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Welcome.this, MainActivity.class));
+                Welcome.this.finish();
             }
         });
     }

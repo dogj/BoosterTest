@@ -1,4 +1,4 @@
-package com.example.administrator.boostertest;
+package com.example.administrator.boostertest.questions;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.administrator.boostertest.Data;
+import com.example.administrator.boostertest.R;
+
 
 public class Question5 extends Fragment implements View.OnClickListener {
 
@@ -20,7 +23,7 @@ public class Question5 extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        Data.score[4]=0;
         View view = inflater.inflate(R.layout.question5,container,false);
         radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         view.findViewById(R.id.radio_1).setOnClickListener(this);
@@ -31,7 +34,12 @@ public class Question5 extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.button_next5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "FT", Toast.LENGTH_LONG ).show();
+                if(Data.score[4]==0){
+                    Toast.makeText(getActivity(), "You haven't finished this question", Toast.LENGTH_LONG ).show();
+                }else {
+                    int count = Data.count();
+                    Toast.makeText(getActivity(), "" + count, Toast.LENGTH_LONG).show();
+                }
             }
         });
         return view;
@@ -46,19 +54,19 @@ public class Question5 extends Fragment implements View.OnClickListener {
         switch(view.getId()){
 
             case R.id.radio_1:
-                Toast.makeText(getActivity(), "A", Toast.LENGTH_LONG ).show();
+                Data.score[4]=1;
                 break;
             case R.id.radio_2:
-                Toast.makeText(getActivity(), "B", Toast.LENGTH_LONG ).show();
+                Data.score[4]=3;
                 break;
             case R.id.radio_3:
-                Toast.makeText(getActivity(), "C", Toast.LENGTH_LONG ).show();
+                Data.score[4]=5;
                 break;
             case R.id.radio_4:
-                Toast.makeText(getActivity(), "D", Toast.LENGTH_LONG ).show();
+                Data.score[4]=7;
                 break;
             case R.id.radio_5:
-                Toast.makeText(getActivity(), "E", Toast.LENGTH_LONG ).show();
+                Data.score[4]=10;
                 break;
         }
     }

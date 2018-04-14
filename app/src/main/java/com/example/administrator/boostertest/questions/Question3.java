@@ -1,4 +1,4 @@
-package com.example.administrator.boostertest;
+package com.example.administrator.boostertest.questions;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -12,6 +12,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.administrator.boostertest.Data;
+import com.example.administrator.boostertest.R;
+
 
 public class Question3 extends Fragment implements View.OnClickListener {
 
@@ -23,7 +26,7 @@ public class Question3 extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        Data.score[2]=0;
         View view = inflater.inflate(R.layout.question3,container,false);
         radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         view.findViewById(R.id.radio_1).setOnClickListener(this);
@@ -34,11 +37,15 @@ public class Question3 extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.button_next3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction transaction = fm.beginTransaction();
-                question4 = new Question4();
-                transaction.replace(R.id.content, question4);
-                transaction.commit();
+                if(Data.score[2]==0){
+                    Toast.makeText(getActivity(), "You haven't finished this question", Toast.LENGTH_LONG ).show();
+                }else {
+                    FragmentManager fm = getFragmentManager();
+                    FragmentTransaction transaction = fm.beginTransaction();
+                    question4 = new Question4();
+                    transaction.replace(R.id.content, question4);
+                    transaction.commit();
+                }
             }
         });
         return view;
@@ -53,19 +60,19 @@ public class Question3 extends Fragment implements View.OnClickListener {
         switch(view.getId()){
 
             case R.id.radio_1:
-                Toast.makeText(getActivity(), "A", Toast.LENGTH_LONG ).show();
+                Data.score[2]=1;
                 break;
             case R.id.radio_2:
-                Toast.makeText(getActivity(), "B", Toast.LENGTH_LONG ).show();
+                Data.score[2]=3;
                 break;
             case R.id.radio_3:
-                Toast.makeText(getActivity(), "C", Toast.LENGTH_LONG ).show();
+                Data.score[2]=5;
                 break;
             case R.id.radio_4:
-                Toast.makeText(getActivity(), "D", Toast.LENGTH_LONG ).show();
+                Data.score[2]=7;
                 break;
             case R.id.radio_5:
-                Toast.makeText(getActivity(), "E", Toast.LENGTH_LONG ).show();
+                Data.score[2]=10;
                 break;
         }
     }

@@ -1,4 +1,4 @@
-package com.example.administrator.boostertest;
+package com.example.administrator.boostertest.results;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -30,14 +30,19 @@ import com.example.administrator.boostertest.R;
  * <p/>
  * Created by PangHaHa12138 on 2017/6/6.
  */
-public class ContentFragment extends Fragment {
+public class AnswerDefensive extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_introduction,container,false);
+        View view = inflater.inflate(R.layout.activity_answer_defensive,container,false);
+        view.findViewById(R.id.defensive_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
         return view;
     }
 

@@ -17,13 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Defensive" />
-        <activity android:name=".Conservative" />
-        <activity android:name=".Balanced" />
-        <activity android:name=".BalancedGrowth" />
-        <activity android:name=".Growth" />
-        <activity android:name=".AggressiveGrowth" />
-        <activity android:name=".Introduction"/>
+        <activity android:name=".fundTypes.Defensive" />
+        <activity android:name=".fundTypes.Conservative" />
+        <activity android:name=".fundTypes.Balanced" />
+        <activity android:name=".fundTypes.BalancedGrowth" />
+        <activity android:name=".fundTypes.Growth" />
+        <activity android:name=".fundTypes.AggressiveGrowth" />
+        <activity android:name=".Introduction" />
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.boostertest.Question5"
+    tools:context="com.example.administrator.boostertest.questions.Question5"
     tools:layout_editor_absoluteY="25dp">
     <ScrollView
         android:id="@+id/scrollView"
@@ -90,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:text="Never or only occasionally over the longer term" />
             </RadioGroup>
+
             <Button
                 android:id="@+id/button_next5"
                 style="@style/Widget.AppCompat.Button.Colored"
@@ -99,7 +100,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/blue"
-                android:text="Next"
+                android:text="Submit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/radio_group" />
