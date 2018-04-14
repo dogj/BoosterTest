@@ -34,16 +34,16 @@
 
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Questionaire">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:icon="@drawable/questionnaire"
+                android:title="Questionnarie" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Submit" />
         </menu>
     </item>
 

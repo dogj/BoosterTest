@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
     private ContentFragment contentFragment;
+    private Question1 question1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,18 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
             startActivity(new Intent(this, Growth.class));
         } else if (id == R.id.aggressive_growth) {
             startActivity(new Intent(this, AggressiveGrowth.class));
+        }else if (id == R.id.nav_share) {
+            FragmentManager fm = getFragmentManager();
+            // 开启Fragment事务
+            FragmentTransaction transaction = fm.beginTransaction();
+                question1 = new Question1();
+            transaction.replace(R.id.content, question1);
+            transaction.commit();
+
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            }//close the drawer if the drawer is opened
         }
 
 
