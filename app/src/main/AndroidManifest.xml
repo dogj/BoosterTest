@@ -22,7 +22,8 @@
         <activity android:name=".Balanced" />
         <activity android:name=".BalancedGrowth" />
         <activity android:name=".Growth" />
-        <activity android:name=".AggressiveGrowth"></activity>
+        <activity android:name=".AggressiveGrowth" />
+        <activity android:name=".Introduction"/>
     </application>
 
 </manifest>

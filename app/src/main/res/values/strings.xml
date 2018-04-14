@@ -29,5 +29,9 @@
     <string name="hint_filter_after_visibility">Did you show the filtered files?</string>
     <string name="filter_after_visibility_visible">Show</string>
     <string name="filter_after_visibility_gone">Hide</string>
-
+    <string-array name="imgs">
+        <item>@drawable/banner_1</item>
+        <item>@drawable/banner_2</item>
+        <item>@drawable/banner_3</item>
+    </string-array>
 </resources>
