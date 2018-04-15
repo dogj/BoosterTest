@@ -14,7 +14,7 @@
         android:layout_marginTop="116dp"
         android:textColor="@color/blue"
         android:textSize="24sp"
-        android:text="Your investor type is defensive"
+        android:text="Your investor type is aggressive growth "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/defensive_icon" />
+        app:srcCompat="@drawable/agressive_growth" />
 
     <TextView
         android:id="@+id/textView5"

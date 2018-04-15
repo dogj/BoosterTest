@@ -17,13 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".fundTypes.Defensive" />
-        <activity android:name=".fundTypes.Conservative" />
-        <activity android:name=".fundTypes.Balanced" />
-        <activity android:name=".fundTypes.BalancedGrowth" />
-        <activity android:name=".fundTypes.Growth" />
-        <activity android:name=".fundTypes.AggressiveGrowth" />
         <activity android:name=".Introduction" />
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>

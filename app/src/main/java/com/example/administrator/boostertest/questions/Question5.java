@@ -39,6 +39,8 @@ public class Question5 extends Fragment implements View.OnClickListener {
                 }else {
                     int count = Data.count();
                     Toast.makeText(getActivity(), "" + count, Toast.LENGTH_LONG).show();
+                    
+
                 }
             }
         });

@@ -1,18 +1,16 @@
-package com.example.administrator.boostertest.questionsFragment;
+package com.example.administrator.boostertest.results;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.administrator.boostertest.ContentFragment;
 import com.example.administrator.boostertest.R;
+import com.example.administrator.boostertest.questionsFragment.DefensiveFragment;
 
 /***
  * ━━━━ Code is far away from ━━━━━━
@@ -35,22 +33,20 @@ import com.example.administrator.boostertest.R;
  * <p/>
  * Created by PangHaHa12138 on 2017/6/6.
  */
-public class AgressiveGrowthFragment extends Fragment {
-
-    ContentFragment contentFragment;
+public class AnswerDefensiveFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_aggressive_growth,container,false);
-        view.findViewById(R.id.back_arrow).setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.activity_answer_defensive,container,false);
+        view.findViewById(R.id.defensive_icon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction transaction = fm.beginTransaction();
-                contentFragment = new ContentFragment();
-                transaction.replace(R.id.content, contentFragment);
+                DefensiveFragment defensiveFragment = new DefensiveFragment();
+                transaction.replace(R.id.content, defensiveFragment);
                 transaction.commit();
             }
         });

@@ -15,21 +15,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.creativityapps.gmailbackgroundlibrary.BackgroundMail;
 import com.example.administrator.boostertest.questions.Question1;
-import com.example.administrator.boostertest.questionsFragment.AgressiveGrowthFragment;
+import com.example.administrator.boostertest.questionsFragment.AggressiveGrowthFragment;
 import com.example.administrator.boostertest.questionsFragment.BalancedFragment;
 import com.example.administrator.boostertest.questionsFragment.BalancedGrowthFragment;
 import com.example.administrator.boostertest.questionsFragment.ConservativeFragment;
 import com.example.administrator.boostertest.questionsFragment.DefensiveFragment;
 import com.example.administrator.boostertest.questionsFragment.GrowthFragment;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.administrator.boostertest.results.AnswerAggressiveGrowthFragment;
+import com.example.administrator.boostertest.results.AnswerBalancedFragment;
+import com.example.administrator.boostertest.results.AnswerBalancedGrowthFragment;
+import com.example.administrator.boostertest.results.AnswerConservativeFragment;
+import com.example.administrator.boostertest.results.AnswerDefensiveFragment;
+import com.example.administrator.boostertest.results.AnswerGrowthFragment;
+import com.example.administrator.boostertest.results.EmailFragment;
 
 public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
     private ContentFragment contentFragment;
     private Question1 question1;
-    private AgressiveGrowthFragment agressiveGrowthFragment;
+    private AggressiveGrowthFragment aggressiveGrowthFragment;
     private BalancedFragment balancedFragment;
     private BalancedGrowthFragment balancedGrowthFragment;
     private DefensiveFragment defensiveFragment;
@@ -119,8 +124,8 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         } else if (id == R.id.aggressive_growth) {
             FragmentManager fm = getFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
-            agressiveGrowthFragment = new AgressiveGrowthFragment();
-            transaction.replace(R.id.content, agressiveGrowthFragment);
+            aggressiveGrowthFragment = new AggressiveGrowthFragment();
+            transaction.replace(R.id.content, aggressiveGrowthFragment);
             transaction.commit();
             drawerClose();
         }else if (id == R.id.questionaire) {
@@ -176,8 +181,96 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                             Menu menu = navigationView.getMenu();
                             itemSubmit = menu.findItem(R.id.submit);
                             itemSubmit.setTitle("Submitted");
+                            FragmentManager fm = getFragmentManager();
+                            FragmentTransaction transaction = fm.beginTransaction();
+                            EmailFragment emailFragment = new EmailFragment();
+                            transaction.replace(R.id.content, emailFragment);
+                            transaction.commit();
+                            drawerClose();
+
+
+//                            String text = "Your score is "+Data.count()+" and the fund type suits you is ";
+//                            if(Data.count()<=12){
+//                                text = text+"defensive, below is the link: \n"+"https://www.booster.co.nz/booster-kiwisaver-scheme/investment-funds/conservative-funds/capital-guaranteed-fund.aspx";
+//                                FragmentManager fm = getFragmentManager();
+//                                FragmentTransaction transaction = fm.beginTransaction();
+//                                AnswerDefensiveFragment answerDefensiveFragment = new AnswerDefensiveFragment();
+//                                transaction.replace(R.id.content, answerDefensiveFragment);
+//                                transaction.commit();
+//                                drawerClose();
+//                            }else if(Data.count()<=20){
+//                                text = text+"conservative, below is the link: \n" +"https://www.booster.co.nz/booster-kiwisaver-scheme/investment-funds/conservative-funds/default-saver-fund.aspx";
+//                                FragmentManager fm = getFragmentManager();
+//                                FragmentTransaction transaction = fm.beginTransaction();
+//                                AnswerConservativeFragment answerConservativeFragment = new AnswerConservativeFragment();
+//                                transaction.replace(R.id.content, answerConservativeFragment);
+//                                transaction.commit();
+//                                drawerClose();
+//
+//                            }else if(Data.count()<=29){
+//                                text = text+"balanced, below is the link: \n" +"https://www.booster.co.nz/booster-kiwisaver-scheme/investment-funds/balanced-funds/balanced-fund.aspx";
+//                                FragmentManager fm = getFragmentManager();
+//                                FragmentTransaction transaction = fm.beginTransaction();
+//                                AnswerBalancedFragment answerBalancedFragment = new AnswerBalancedFragment();
+//                                transaction.replace(R.id.content, answerBalancedFragment);
+//                                transaction.commit();
+//                                drawerClose();
+//
+//                            }else if(Data.count()<=37){
+//                                text = text+"balanced growth, below is the link: \n" +"https://www.booster.co.nz/booster-kiwisaver-scheme/investment-funds/growth-funds/balanced-growth-fund.aspx";
+//                                FragmentManager fm = getFragmentManager();
+//                                FragmentTransaction transaction = fm.beginTransaction();
+//                                AnswerBalancedGrowthFragment answerBalancedGrowthFragmentFragment = new AnswerBalancedGrowthFragment();
+//                                transaction.replace(R.id.content, answerBalancedGrowthFragmentFragment);
+//                                transaction.commit();
+//                                drawerClose();
+//
+//                            }else if(Data.count()<=44){
+//                                text = text+"growth, below is the link: \n"+"https://www.booster.co.nz/booster-kiwisaver-scheme/investment-funds/growth-funds/high-growth-fund.aspx";
+//                                FragmentManager fm = getFragmentManager();
+//                                FragmentTransaction transaction = fm.beginTransaction();
+//                                AnswerGrowthFragment answerGrowthFragment = new AnswerGrowthFragment();
+//                                transaction.replace(R.id.content, answerGrowthFragment);
+//                                transaction.commit();
+//                                drawerClose();
+//
+//                            }else if(Data.count()<=50){
+//                                text = text+"aggressive growth, below is the link: \n" +"https://www.booster.co.nz/booster-kiwisaver-scheme/investment-funds/growth-funds/high-growth-fund.aspx";
+//                                FragmentManager fm = getFragmentManager();
+//                                FragmentTransaction transaction = fm.beginTransaction();
+//                                AnswerAggressiveGrowthFragment answerAggressiveGrowthFragment = new AnswerAggressiveGrowthFragment();
+//                                transaction.replace(R.id.content, answerAggressiveGrowthFragment);
+//                                transaction.commit();
+//                                drawerClose();
+//                            }else{
+//                                Toast.makeText(MainActivity.this,"something unexpected happened",Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                            BackgroundMail.newBuilder(MainActivity.this)
+//                                    .withUsername("edongxxaq@gmail.com")
+//                                    .withPassword("021edongidc")
+//                                    .withMailto("jiangx04@gmail.com")
+//                                    .withType(BackgroundMail.TYPE_PLAIN)
+//                                    .withSubject("Your investor type")
+//                                    .withBody(text)
+//                                    .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
+//                                        @Override
+//                                        public void onSuccess() {
+//                                            //do some magic
+//                                        }
+//                                    })
+//                                    .withOnFailCallback(new BackgroundMail.OnFailCallback() {
+//                                        @Override
+//                                        public void onFail() {
+//                                            //do some magic
+//                                        }
+//                                    })
+//                                    .send();
+
+
+
                         }else{
-                            Toast.makeText(getApplicationContext(),"you haven't finished the questionaire",Toast.LENGTH_SHORT);
+                            Toast.makeText(getApplicationContext(),"you haven't finished the questionaire",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
