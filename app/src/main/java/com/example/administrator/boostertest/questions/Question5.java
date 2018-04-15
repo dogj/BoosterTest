@@ -38,7 +38,7 @@ public class Question5 extends Fragment implements View.OnClickListener {
                     Toast.makeText(getActivity(), "You haven't finished this question", Toast.LENGTH_LONG ).show();
                 }else {
                     int count = Data.count();
-                    Toast.makeText(getActivity(), "" + count, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "The score is" + count+" this button is for test,due to the requirement, please click the submit button in the menu", Toast.LENGTH_LONG).show();
                     
 
                 }
